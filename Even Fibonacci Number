@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    long long a = 1, b = 2;
+    long long sum = 0;
+
+    while (b <= 4000000) {
+        if (b % 2 == 0)
+            sum += b;
+
+        long long n = a + b;
+        a = b;
+        b = n;
+    }
+
+    printf("%lld\n", sum);
+    return 0;
+}
