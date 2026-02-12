@@ -1,0 +1,51 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int i , n ,r1,c1,r2,c2;
+    printf("Enter the number od rows and coloums in the matrix 1  :");
+    scanf("%d%d",&r1,&c1);
+    printf("Enter the number od rows and coloums in the matrix 2  :");
+    scanf("%d%d",&r2,&c2);
+    int n1[r1][c1];
+    int n2[r2][c2];
+    printf("Enter the values for matrix 1  :");
+    for(int i=0;i<r1;i++){
+        for(int j=0;j<c1;j++){
+            scanf("%d",&n1[i][j]);
+        }
+    }
+    printf("Enter the value for matrix 2  :");
+    for(int i=0;i<r2;i++){
+        for(int j=0;j<c2;j++){
+            scanf("%d",&n2[i][j]);
+        }
+    }
+    int c[r1][c2];
+    if(r2==c1){
+        
+           for(int i=0;i<r1;i++){
+        for(int j=0;j<c2;j++){
+            c[i][j]=0;
+            for(int k=0 ;k<c1;k++){
+                 c[i][j]+=n1[i][k]*n2[k][j];
+            }
+        
+    }
+           }
+           printf("the resultant matrix is \n");
+           for(int i=0;i<r1;i++){
+        for(int j=0;j<c2;j++){ 
+            printf("%d",c[i][j]);}
+              printf("\n");
+    }
+}
+    
+    else{
+        printf("The matrix  is not applicable for multiplication");
+        
+    }
+           
+    
+   return 0;
+}
