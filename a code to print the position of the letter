@@ -1,0 +1,39 @@
+
+#include <stdio.h>
+int my(int a[],int k,int n);
+int main() {
+ int n ,k;
+ printf("Enter the number of elemants ");
+ scanf("%d",&n);
+ printf("enter the key value ");
+ scanf("%d",&k);
+ int a[n];
+
+ printf("enter the numbers");
+ for(int i=0;i<n;i++){
+     scanf("%d",&a[i]);
+ }
+ int hi=my(a,k,n);
+ if (hi!=1){
+     printf("Elemant %d found at position%d ",k,hi+1);
+     
+ }
+else{
+    printf("the number is not found");
+}
+
+    return 0;
+}
+int my(int a[] ,int k,int n){
+    
+    for(int i=0;i<n;i++){
+     if(a[i]==k){
+          
+           return i;
+     }
+    }
+        return 1;
+    
+
+
+}
