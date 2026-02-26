@@ -1,0 +1,38 @@
+#include<stdio.h>
+int main(){
+    FILE *f;
+    f=fopen("hi.txt","r");
+     if(f==NULL){
+        printf("THe file is not exist ");
+        return 0;
+       }
+    int c;
+    int count=0 ;
+    int space=0;
+    int chara=0;
+    int tab=0;
+    int line=0;
+    
+    while((c=fgetc(f))!=EOF){
+        if(c=='\t'){
+        tab++;
+       }
+      if(c=='\n'){
+        line++;
+       }
+       if(c==' '){
+        space++;
+       }
+        if((c>='A'&&c<='Z')||(c>='a'&&c<='z')){
+            chara++;
+        }
+        count++;
+    }
+
+printf("the number of alphabets in the file is %d\n",chara);
+printf("The number of space in the  list is %d\n",space);
+printf("The toltal number of charactors,tab,new line in the file is %d \n%d\n %d",count,tab,line);
+fclose(f);
+    
+return 0;
+}
