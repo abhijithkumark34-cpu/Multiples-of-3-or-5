@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include<string.h>
+struct student{
+char name[20];
+int roll;
+int marks;
+};
+
+int main(){
+    FILE *f;
+    f=fopen("student.txt","w");
+
+if(f==NULL){
+    printf("NULL file");
+    return 0;
+}
+    int i,n;
+    printf("Enter the number of students");
+    scanf("%d",&n);
+
+
+printf("fill details");
+struct student s[n];
+for(i=0;i<n;i++){
+     printf("ENter the studentd roll name , rollNO and marks ");
+     scanf(" %s%d%d",s[i].name,&s[i].roll,&s[i].marks);
+     fprintf(f,"%s %d %d \n",s[i].name,s[i].roll,s[i].marks);
+
+}
+fclose(f);
+int roll,marks;
+char name[20];
+int max=0;
+char topper[20];
+f=fopen("student.txt","r");
+while(fscanf(f,"%s%d%d",name,&roll,&marks)!=EOF){
+    printf("%s\n%d\n%d",name ,roll,marks);
+    if(marks>max){
+        max=marks;
+        strcpy(topper,name);
+    }
+    }
+fclose(f);
+printf("Toper is %s",topper);
+printf("Highest mark is %d",max);
+
+return 0;
+
+}
