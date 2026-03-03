@@ -1,0 +1,23 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int n,i,sum=0,sum2=0;
+    printf("Enter the number of elemants");
+    scanf("%d",&n);
+    int a=n;
+    int s[n];
+    printf("Enter all the elements");
+    for(i=0;i<n-1;i++){
+        scanf("%d",&s[i]);
+    }
+    for(i=0;i<n-1;i++){
+        sum+=s[i];
+        
+    }
+     for(i=1;i<n+1;i++){
+         sum2+=i;}
+    int g=sum2-sum;
+    printf("the missing element is %d",g);
+    return 0;
+}
